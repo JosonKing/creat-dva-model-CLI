@@ -44,6 +44,9 @@ program
   .command('create <filename>')
   .description('创建model文件')
   .action(async (filename) => {
+    if (!filename) {
+      filename = 'hello';
+    }
     const res = await inquirer.prompt(prompList)
     if(res.template === 'curd') {
       templates.forEach((item) => {
