@@ -1,0 +1,32 @@
+{
+  "name": "creat-dva-model-cli",
+  "version": "0.1.5",
+  "description": "creat dva model",
+  "main": "index.js",
+  "bin": {
+    "dva-model": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JosonKing/creat-dva-model-CLI.git"
+  },
+  "keywords": [
+    "react",
+    "dva",
+    "model",
+    "cli"
+  ],
+  "author": "Joson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JosonKing/creat-dva-model-CLI/issues"
+  },
+  "homepage": "https://github.com/JosonKing/creat-dva-model-CLI#readme",
+  "dependencies": {
+    "commander": "^7.0.0",
+    "inquirer": "^7.3.3"
+  }
+}
