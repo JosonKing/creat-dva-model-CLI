@@ -22,8 +22,8 @@ module.exports = function (gatwayName, modelName) {
           yield put({ type: '_saveDatas', payload: data });
           callback && callback(data);
         },
-        *addData({ payload }, { put, call, select }) {
-          var data = yield call(service.postCmd, '${gatwayName}/data', payload.data);
+        *addData({ payload, callback }, { put, call, select }) {
+          var data = yield call(service.postCmd, '${gatwayName}/data', payload);
           console.log('addData', data);
           // if (!!data.error) {
           //   return;
@@ -31,8 +31,8 @@ module.exports = function (gatwayName, modelName) {
           yield put({ type: '_addData', payload: data });
           callback && callback(data);
         },
-        *editData({ payload }, { put, call, select }) {
-          var data = yield call(service.putCmd, '${gatwayName}/data', payload.data);
+        *editData({ payload, callback }, { put, call, select }) {
+          var data = yield call(service.putCmd, '${gatwayName}/data', payload);
           console.log('editData', data);
           // if (!!data.error) {
           //   return;
@@ -40,13 +40,13 @@ module.exports = function (gatwayName, modelName) {
           yield put({ type: '_editData', payload: data });
           callback && callback(data);
         },
-        *deleteData({ payload }, { put, call, select }) {
-          var data = yield call(service.deleteCmd, '${gatwayName}/data/${payload.data}');
+        *deleteData({ payload, callback }, { put, call, select }) {
+          var data = yield call(service.deleteCmd, '${gatwayName}/data/${payload}');
           console.log('deleteData', data);
           if (!!data.error) {
             return;
           }
-          yield put({ type: '_deleteData', payload: payload.data });
+          yield put({ type: '_deleteData', payload: payload });
           callback && callback(data);
         },
       },
