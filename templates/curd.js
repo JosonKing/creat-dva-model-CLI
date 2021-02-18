@@ -41,7 +41,7 @@ module.exports = function (gatwayName, modelName) {
           callback && callback(data);
         },
         *deleteData({ payload, callback }, { put, call, select }) {
-          var data = yield call(service.deleteCmd, '${gatwayName}/data/${payload}');
+          var data = yield call(service.deleteCmd, '${gatwayName}/data/payload');
           console.log('deleteData', data);
           if (!!data.error) {
             return;
